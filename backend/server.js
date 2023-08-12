@@ -8,7 +8,11 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+const allowedOrigins = ['https://final-fullstackproject.onrender.com/'];
+
+app.use(cors({
+  origin: allowedOrigins,
+}));
 app.use(express.json());
 
 // const uri = process.env.ATLAS_URI;
